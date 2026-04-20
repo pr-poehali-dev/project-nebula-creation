@@ -1,6 +1,8 @@
 import GradientBlinds from "@/components/GradientBlinds"
 import Navbar from "@/components/Navbar"
 import Icon from "@/components/ui/icon"
+import WorkoutsSection from "@/components/WorkoutsSection"
+import RatingSection from "@/components/RatingSection"
 
 const Index = () => {
   return (
@@ -25,9 +27,9 @@ const Index = () => {
         />
       </div>
 
-      <div className="relative z-10 flex min-h-screen flex-col">
+      <div className="relative z-10 flex flex-col">
         {/* Hero Section */}
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex items-center justify-center">
           <div className="flex items-center justify-center min-h-screen w-full px-5 sm:px-20">
             <div className="relative z-10 flex max-w-4xl flex-col items-center gap-8 text-center">
 
@@ -79,6 +81,17 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Workouts Section */}
+        <WorkoutsSection />
+
+        {/* Rating Section */}
+        <RatingSection />
+
+        {/* Footer */}
+        <footer className="relative z-10 border-t border-white/10 py-8 px-5 text-center text-white/30 text-sm">
+          <p>⚡ MoveUp — движение делает тебя умнее</p>
+        </footer>
       </div>
     </main>
   )

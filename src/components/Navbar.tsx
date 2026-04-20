@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react"
+import AuthModal from "@/components/AuthModal"
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [authOpen, setAuthOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,13 +61,20 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a
-            href="#workouts"
+          <button
+            onClick={() => setAuthOpen(true)}
+            className="rounded-lg font-medium relative cursor-pointer hover:-translate-y-0.5 transition-all duration-200 inline-block text-center px-4 py-2 text-sm border border-white/10 bg-white/5 text-white/70 hover:text-white hover:bg-white/10"
+          >
+            Войти
+          </button>
+          <button
+            onClick={() => setAuthOpen(true)}
             className="rounded-lg font-medium relative cursor-pointer hover:-translate-y-0.5 transition-all duration-200 inline-block text-center px-4 py-2 text-sm border bg-gradient-to-r from-green-600 to-emerald-600 border-green-400/30 text-white hover:from-green-500 hover:to-emerald-500"
           >
             ⚡ Начать
-          </a>
+          </button>
         </div>
+        <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
       </header>
 
       {/* Mobile Header */}
